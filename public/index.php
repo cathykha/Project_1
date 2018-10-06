@@ -6,34 +6,46 @@
  * Time: 1:31 PM
  */
 
-main::start();
+main::start("temp.csv");
+
 class main {
-    static public function start() {
-        $records = csv::getRecords();
+
+    public static function start($filename){
+
+        $records = csv::getRecords($filename);
         $table = html::generateTable($records);
-        system::printPage($table);
     }
-}
-
-class csv {
-    static public function getRecords(){
-
-    }
-
 }
 
 class html {
 
-    static public function generateTable($records){
+
+
+    public static function generateTable($records) {
 
     }
+}
+class csv {
 
+
+
+    public static function getRecords($filename) {
+
+    }
+}
+class record {
+
+
+
+    public function __construct(Array $fieldNames, $values){
+
+
+    }
 }
 
-class system {
+class recordFactory {
 
-    static public function printPage($page){
+    public static function create(
 
     }
-
 }
