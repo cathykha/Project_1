@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -5,7 +6,7 @@
  * Date: 10/2/18
  * Time: 1:31 PM
  */
-
+include 'header.html';
 main::start("temp.csv");
 
 class main {
@@ -17,14 +18,13 @@ class main {
     }
 }
 
-class html
-{
+class html{
 
 
     public static function generateTable($records)
     {
         $table = "";
-        $table .= "<table class = 'table table-striped'>";
+        $table .= '<table class = "table table-striped">';
 
         foreach ($records as $record) {
 
@@ -35,9 +35,11 @@ class html
 
         foreach ($record as $key => $values) {
 
-            $table .= "<tr>";
-            echo "<th>" . $key . "</th>";
+            $table .= '<tr>';
+            echo '<th class="thead-dark">' . $key . '</th>';
             $table .= "</tr>";
+
+
 
         }
 
@@ -56,6 +58,7 @@ class html
         print_r($table);
     }
 }
+
 class csv {
 
 
@@ -124,5 +127,6 @@ class recordFactory {
         return $record;
     }
 }
+
 
 
